@@ -3,10 +3,11 @@ resource "aws_codebuild_project" "default" {
   service_role = aws_iam_role.codebuild.arn
 
   source {
-    buildspec       = "terraform/codebuild/buildspec.yml"
-    git_clone_depth = 1
-    location        = "https://github.com/koki-develop/terraform-on-codebuild-example.git"
-    type            = "GITHUB"
+    report_build_status = true
+    buildspec           = "terraform/codebuild/buildspec.yml"
+    git_clone_depth     = 1
+    location            = "https://github.com/koki-develop/terraform-on-codebuild-example.git"
+    type                = "GITHUB"
   }
 
   environment {
