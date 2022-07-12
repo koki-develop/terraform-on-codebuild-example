@@ -14,3 +14,7 @@ phases:
       - cd terraform/example
       - terraform init
       - terraform plan
+
+  build:
+    commands:
+      - terraform apply -auto-approve
