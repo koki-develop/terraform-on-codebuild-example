@@ -38,7 +38,7 @@ resource "aws_codebuild_webhook" "default" {
   filter_group {
     filter {
       exclude_matched_pattern = false
-      pattern                 = "PUSH"
+      pattern                 = "PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED, PULL_REQUEST_REOPENED"
       type                    = "EVENT"
     }
   }
