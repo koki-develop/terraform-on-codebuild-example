@@ -3,8 +3,8 @@ terraform {
     profile              = "default"
     workspace_key_prefix = "workspaces"
     region               = "us-east-1"
-    bucket               = "terraform-on-codepipeline-example-tfstate"
-    key                  = "pipeline/terraform.tfstate"
+    bucket               = "tf-on-codebuild-example-tfstate"
+    key                  = "codebuild/terraform.tfstate"
     encrypt              = true
   }
 }
