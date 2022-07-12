@@ -1,3 +1,3 @@
 locals {
-  prefix = "tf-on-codepipeline"
+  prefix = "tf-on-codebuild"
 }
