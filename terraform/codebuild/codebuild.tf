@@ -13,6 +13,11 @@ resource "aws_codebuild_project" "default" {
     compute_type = "BUILD_GENERAL1_SMALL"
     image        = "aws/codebuild/standard:6.0-22.06.30"
     type         = "LINUX_CONTAINER"
+
+    environment_variable {
+      name  = "TF_VERSION"
+      value = "1.2.3"
+    }
   }
 
   artifacts {
