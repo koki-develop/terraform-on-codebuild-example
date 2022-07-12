@@ -11,6 +11,6 @@ phases:
 
   pre_build:
     commands:
-      - cd terraform/codebuild
+      - cd terraform/example
       - terraform init
       - terraform plan
