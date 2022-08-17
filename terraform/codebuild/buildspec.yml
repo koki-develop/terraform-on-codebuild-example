@@ -16,7 +16,7 @@ phases:
     commands:
       - cd terraform/example
       - terraform init
-      - tfcmt -owner "koki-develop" -repo "terraform-on-codebuild-example" -pr "${CODEBUILD_SOURCE_VERSION#pr/}" plan -patch -- terraform plan
+      - tfcmt -var target:dev -owner "koki-develop" -repo "terraform-on-codebuild-example" -pr "${CODEBUILD_SOURCE_VERSION#pr/}" plan -patch -- terraform plan
 
   # build:
   #   commands:
