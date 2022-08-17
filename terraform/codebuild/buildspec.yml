@@ -6,8 +6,11 @@ phases:
       - wget "https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip"
       - unzip "terraform_${TF_VERSION}_linux_amd64.zip" -d /usr/bin
       - chmod +x /usr/bin/terraform
+      - wget "https://github.com/suzuki-shunsuke/tfcmt/releases/download/v3.4.0/tfcmt_linux_amd64.tar.gz"
+      - tar xzf "tfcmt_linux_amd64.tar.gz" -C /usr/bin
     finally:
       - terraform --version
+      - tfcmt --version
 
   pre_build:
     commands:
