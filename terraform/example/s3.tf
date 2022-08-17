@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "default" {
   bucket_prefix = "${local.prefix}-"
-  force_destroy = true
+  force_destroy = false
 }
 
 resource "aws_s3_bucket_public_access_block" "default" {
@@ -13,7 +13,7 @@ resource "aws_s3_bucket_public_access_block" "default" {
 }
 
 resource "aws_s3_bucket" "default2" {
-  bucket_prefix = "${local.prefix}-2-"
+  bucket_prefix = "${local.prefix}-2-replaced"
   force_destroy = true
 }
 
@@ -26,13 +26,27 @@ resource "aws_s3_bucket_public_access_block" "default2" {
   restrict_public_buckets = true
 }
 
-resource "aws_s3_bucket" "default3" {
-  bucket_prefix = "${local.prefix}-3-"
+# resource "aws_s3_bucket" "default3" {
+#   bucket_prefix = "${local.prefix}-3-"
+#   force_destroy = true
+# }
+
+# resource "aws_s3_bucket_public_access_block" "default3" {
+#   bucket = aws_s3_bucket.default3.id
+
+#   block_public_acls       = true
+#   block_public_policy     = true
+#   ignore_public_acls      = true
+#   restrict_public_buckets = true
+# }
+
+resource "aws_s3_bucket" "default4" {
+  bucket_prefix = "${local.prefix}-4-"
   force_destroy = true
 }
 
-resource "aws_s3_bucket_public_access_block" "default3" {
-  bucket = aws_s3_bucket.default3.id
+resource "aws_s3_bucket_public_access_block" "default4" {
+  bucket = aws_s3_bucket.default4.id
 
   block_public_acls       = true
   block_public_policy     = true
