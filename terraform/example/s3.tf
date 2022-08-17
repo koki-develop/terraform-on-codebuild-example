@@ -40,16 +40,16 @@ resource "aws_s3_bucket_public_access_block" "default2" {
 #   restrict_public_buckets = true
 # }
 
-resource "aws_s3_bucket" "default4" {
-  bucket_prefix = "${local.prefix}-4-"
-  force_destroy = true
-}
+# resource "aws_s3_bucket" "default4" {
+#   bucket_prefix = "${local.prefix}-4-"
+#   force_destroy = true
+# }
 
-resource "aws_s3_bucket_public_access_block" "default4" {
-  bucket = aws_s3_bucket.default4.id
+# resource "aws_s3_bucket_public_access_block" "default4" {
+#   bucket = aws_s3_bucket.default4.id
 
-  block_public_acls       = true
-  block_public_policy     = true
-  ignore_public_acls      = true
-  restrict_public_buckets = true
-}
+#   block_public_acls       = true
+#   block_public_policy     = true
+#   ignore_public_acls      = true
+#   restrict_public_buckets = true
+# }
